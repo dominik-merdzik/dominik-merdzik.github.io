@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Components/Navbar';
 import './App.css';
-import githubLogo from './Images/github-mark.png'; 
+import githubLogo from './Images/github-mark.png';
 
 const Project = ({ title, shortDescription, longDescription, imageSrc, githubLink, images, technologies }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,19 +15,25 @@ const Project = ({ title, shortDescription, longDescription, imageSrc, githubLin
   useEffect(() => {
     let interval;
     if (isModalOpen) {
+      document.body.style.overflow = 'hidden'; 
       interval = setInterval(() => {
         setCurrentImageIndex((currentImageIndex + 1) % images.length);
       }, 4000);
+    } else {
+      document.body.style.overflow = 'auto'; 
     }
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      document.body.style.overflow = 'auto'; 
+    };
   }, [isModalOpen, currentImageIndex, images.length]);
 
   return (
     <div className="project">
-      <img className="project-img" src={imageSrc} alt={title} />
+      <img className="project-img" src={imageSrc} alt={title} onClick={toggleModal} />
       <p>{shortDescription}</p>
       <span className="read-more-toggle" onClick={toggleModal}>
-        Read More
+        Learn More
       </span>
 
       {isModalOpen && (
@@ -43,11 +49,11 @@ const Project = ({ title, shortDescription, longDescription, imageSrc, githubLin
                 <p><strong>Technologies Used:</strong> {technologies}</p>
                 <p>{longDescription}</p>
                 <a href={githubLink} className="github-link" target="_blank" rel="noopener noreferrer">
-                  <img src={githubLogo} alt="GitHub" /> {/* Use the imported image */}
+                  <img src={githubLogo} alt="GitHub" />
                 </a>
               </div>
             </div>
-            <span className="modal-close" onClick={toggleModal}>Close</span>
+            <button className="modal-close" onClick={toggleModal}></button>
           </div>
         </>
       )}
@@ -73,10 +79,10 @@ function App() {
         <div className="projects-container">
           <Project
             title="Project 1"
-            shortDescription="Project 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+            shortDescription="Bunny and Drago Objects"
             longDescription="Detailed description for Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus turpis eu arcu dictum, nec volutpat libero fermentum. Aenean sit amet est auctor, congue nunc vitae, bibendum lacus."
             imageSrc="https://via.placeholder.com/150"
-            githubLink="https://github.com/yourprofile/project1"
+            githubLink="https://github.com/profile/project1"
             images={[
               "https://via.placeholder.com/400x300",
               "https://via.placeholder.com/400x300",
@@ -89,7 +95,7 @@ function App() {
             shortDescription="Project 2: Fusce dapibus turpis eu arcu dictum, nec volutpat libero fermentum."
             longDescription="Detailed description for Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus turpis eu arcu dictum, nec volutpat libero fermentum. Aenean sit amet est auctor, congue nunc vitae, bibendum lacus."
             imageSrc="https://via.placeholder.com/150"
-            githubLink="https://github.com/yourprofile/project2"
+            githubLink="https://github.com/profile/project2"
             images={[
               "https://via.placeholder.com/400x300",
               "https://via.placeholder.com/400x300",
@@ -102,7 +108,7 @@ function App() {
             shortDescription="Project 3: Aenean sit amet est auctor, congue nunc vitae, bibendum lacus."
             longDescription="Detailed description for Project 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus turpis eu arcu dictum, nec volutpat libero fermentum. Aenean sit amet est auctor, congue nunc vitae, bibendum lacus."
             imageSrc="https://via.placeholder.com/150"
-            githubLink="https://github.com/yourprofile/project3"
+            githubLink="https://github.com/profile/project3"
             images={[
               "https://via.placeholder.com/400x300",
               "https://via.placeholder.com/400x300",
@@ -115,12 +121,12 @@ function App() {
       <section id="contact" className="full-screen">
         <h2>Contact</h2>
         <img src="https://via.placeholder.com/150" alt="Contact" />
-        <p>You can reach me at: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        <p>You can reach me at: <a href="mailto:your.email@example.com">email@example.com</a></p>
         <p>Or follow me on social media:</p>
         <ul>
-          <li><a href="https://twitter.com/yourprofile">Twitter</a></li>
-          <li><a href="https://linkedin.com/in/yourprofile">LinkedIn</a></li>
-          <li><a href="https://github.com/yourprofile">GitHub</a></li>
+          <li><a href="https://twitter.com/">Twitter</a></li>
+          <li><a href="https://linkedin.com/in/">LinkedIn</a></li>
+          <li><a href="https://github.com/">GitHub</a></li>
         </ul>
       </section>
     </div>

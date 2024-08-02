@@ -1,7 +1,8 @@
-/* src/App.css */
+
 .App {
-  font-family: Arial, sans-serif;
-  text-align: center;
+  font-family: "Handlee", sans-serif;
+  font-weight: 500;
+  font-style: normal;
 }
 
 .App-header {
@@ -65,7 +66,7 @@
   color: blue;
   text-decoration: underline;
   display: inline-block;
-  margin-top: 10px;
+  /* margin-top: 10px; */
 }
 
 .github-link {
@@ -105,11 +106,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-img {
-  width: 150px;
-  border: 2px solid #000;
-}
-
 .modal {
   display: none;
   position: fixed;
@@ -133,6 +129,45 @@ img {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-close:before,
+.modal-close:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15px;
+  width: 2px;
+  height: 30px;
+  background-color: black;
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-close:before {
+  transform: rotate(45deg);
+}
+
+.modal-close:after {
+  transform: rotate(-45deg);
+}
+
+.modal-close:hover:before,
+.modal-close:hover:after {
+  transform: rotate(90deg);
+}
+
 
 .modal-overlay {
   display: none;
@@ -158,7 +193,7 @@ img {
 }
 
 .carousel {
-  flex: 3;
+  flex: 1.5;
   display: flex;
   align-items: center;
   justify-content: center;
