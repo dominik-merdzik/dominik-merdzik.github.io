@@ -7,7 +7,9 @@ import githubLogo from './Images/github-mark.svg';
 import storyProject from './Images/see-n-play-project.png'
 import personalHProject from './Images/personal-hub-project.png'
 import bndProject from './Images/bnd-project.png'
+// eslint-disable-next-line
 import bitHi from './Images/bitmoji/sticker.png';
+// eslint-disable-next-line
 import grinSmile from './Images/bitmoji/grin-smile.png';
 
 const Project = ({ title, shortDescription, longDescription, imageSrc, githubLink, images, technologies }) => {

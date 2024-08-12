@@ -1,26 +1,24 @@
-
-import React, { useState, useEffect } from 'react';
-import './Navbar.css'; // You can style your navbar using this CSS file
+import React, { useState, useEffect, useRef } from 'react';
+import './Navbar.css'; 
 
 const Navbar = () => {
   const [show, setShow] = useState(true);
-  let lastScrollY = window.scrollY;
-
-  const handleScroll = () => {
-    if (window.scrollY > lastScrollY) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
-    lastScrollY = window.scrollY;
-  };
-
+  const lastScrollY = useRef(window.scrollY); 
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY.current) {
+        setShow(false);
+      } else {
+        setShow(true);
+      }
+      lastScrollY.current = window.scrollY; 
+    };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, []); 
 
   return (
     <nav className={`navbar ${show ? 'show' : 'hide'}`}>
