@@ -1,18 +1,22 @@
 // src/App.js
-import React, { useState, useEffect } from 'react';
-import Navbar from './Components/Navbar';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Navbar from "./Components/Navbar";
+import "./App.css";
 
-import githubLogo from './Images/github-mark.svg';
-import storyProject from './Images/see-n-play-project.png'
-import personalHProject from './Images/personal-hub-project.png'
-import bndProject from './Images/bnd-project.png'
-// eslint-disable-next-line
-import bitHi from './Images/bitmoji/sticker.png';
-// eslint-disable-next-line
-import grinSmile from './Images/bitmoji/grin-smile.png';
+import githubLogo from "./Images/github-mark.svg";
+import storyProject from "./Images/see-n-play-project.png";
+import personalHProject from "./Images/personal-hub-project.png";
+import bndProject from "./Images/bnd-project.png";
 
-const Project = ({ title, shortDescription, longDescription, imageSrc, githubLink, images, technologies }) => {
+const Project = ({
+  title,
+  shortDescription,
+  longDescription,
+  imageSrc,
+  githubLink,
+  images,
+  technologies,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -23,22 +27,27 @@ const Project = ({ title, shortDescription, longDescription, imageSrc, githubLin
   useEffect(() => {
     let interval;
     if (isModalOpen) {
-      document.body.style.overflow = 'hidden'; 
+      document.body.style.overflow = "hidden";
       interval = setInterval(() => {
         setCurrentImageIndex((currentImageIndex + 1) % images.length);
       }, 4000);
     } else {
-      document.body.style.overflow = 'auto'; 
+      document.body.style.overflow = "auto";
     }
     return () => {
       clearInterval(interval);
-      document.body.style.overflow = 'auto'; 
+      document.body.style.overflow = "auto";
     };
   }, [isModalOpen, currentImageIndex, images.length]);
 
   return (
     <div className="project">
-      <img className="project-img" src={imageSrc} alt={title} onClick={toggleModal} />
+      <img
+        className="project-img"
+        src={imageSrc}
+        alt={title}
+        onClick={toggleModal}
+      />
       <p>{shortDescription}</p>
       <span className="read-more-toggle" onClick={toggleModal}>
         &#10230;
@@ -46,17 +55,30 @@ const Project = ({ title, shortDescription, longDescription, imageSrc, githubLin
 
       {isModalOpen && (
         <>
-          <div className={`modal-overlay ${isModalOpen ? 'show' : 'hide'}`} onClick={toggleModal}></div>
-          <div className={`modal ${isModalOpen ? 'show' : 'hide'}`}>
+          <div
+            className={`modal-overlay ${isModalOpen ? "show" : "hide"}`}
+            onClick={toggleModal}
+          ></div>
+          <div className={`modal ${isModalOpen ? "show" : "hide"}`}>
             <div className="modal-content">
               <div className="carousel">
-                <img src={images[currentImageIndex]} alt={`${title} screenshot ${currentImageIndex + 1}`} />
+                <img
+                  src={images[currentImageIndex]}
+                  alt={`${title} screenshot ${currentImageIndex + 1}`}
+                />
               </div>
               <div className="text-area">
                 <h2>{title}</h2>
-                <p><strong>Technologies Used:</strong> {technologies}</p>
+                <p>
+                  <strong>Technologies Used:</strong> {technologies}
+                </p>
                 <p>{longDescription}</p>
-                <a href={githubLink} className="github-link" target="_blank" rel="noopener noreferrer">
+                <a
+                  href={githubLink}
+                  className="github-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={githubLogo} alt="GitHub" />
                 </a>
               </div>
@@ -71,32 +93,79 @@ const Project = ({ title, shortDescription, longDescription, imageSrc, githubLin
 
 function App() {
   useEffect(() => {
-    const aboutSection = document.getElementById('about');
+    const aboutSection = document.getElementById("about");
     const handleScroll = () => {
       const rect = aboutSection.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom >= 0) {
-        aboutSection.classList.add('show');
+        aboutSection.classList.add("show");
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div className="App">
       <Navbar />
+
       <header className="App-header">
         <h1>Welcome to My Portfolio</h1>
         <p>This is a simple portfolio website built with React.</p>
       </header>
+
       <section id="about" className="full-screen">
         <h2>About Me</h2>
-        <div className="image-wrapper"></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus turpis eu arcu dictum, nec volutpat libero fermentum. Aenean sit amet est auctor, congue nunc vitae, bibendum lacus.</p>
+        <div className="about-content">
+          <div className="column-one">
+            <div className="image-wrapper">{/* Image will be here */}</div>
+            <div className="intro-text-wrapper">
+              <p className="intro-text">
+                Hi, I'm Dominik Merdzik, a passionate and dedicated software
+                developer with a strong background in full-stack web
+                development. I have a keen eye for detail and a love for
+                creating clean, efficient, and user-friendly applications.
+              </p>
+            </div>
+          </div>
+
+          <div className="column-two text-content">
+            <h3>Technical Skills</h3>
+            <div className="tech-stack">
+              <img src="path_to_js_logo" alt="JavaScript" />
+              <img src="path_to_react_logo" alt="React" />
+              <img src="path_to_node_logo" alt="Node.js" />
+              <img src="path_to_python_logo" alt="Python" />
+              <img src="path_to_docker_logo" alt="Docker" />
+            </div>
+
+            <h3>Experience</h3>
+            <div className="experience">
+              <h4>Creative One, Huntsville — Web Specialist</h4>
+              <p>July 2022 - September 2022</p>
+              <p>
+                Worked with a team to meet deadlines and accomplish goals with
+                clear communication. Held meetings with clients to coordinate
+                and create WordPress websites and applications. Adapted to new
+                technologies while managing client expectations.
+              </p>
+
+              <h4>
+                Harveys & Swiss Chalet, Innisfil — Server and Store Opener
+              </h4>
+              <p>October 2018 - Present</p>
+              <p>
+                Sharpened teamwork and interpersonal skills. Learned to resolve
+                complaints and conflicts independently, adhering to company
+                standards.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
+
       <section id="projects" className="full-screen">
-        <h2>Projects</h2>
+        <h2>Personal Projects</h2>
         <div className="projects-container">
           <Project
             title="Bunny & Dragon Objects"
@@ -107,7 +176,7 @@ function App() {
             images={[
               "https://via.placeholder.com/400x300",
               "https://via.placeholder.com/400x300",
-              "https://via.placeholder.com/400x300"
+              "https://via.placeholder.com/400x300",
             ]}
             technologies="React, CSS, HTML"
           />
@@ -120,7 +189,7 @@ function App() {
             images={[
               "https://via.placeholder.com/400x300",
               "https://via.placeholder.com/400x300",
-              "https://via.placeholder.com/400x300"
+              "https://via.placeholder.com/400x300",
             ]}
             technologies="JavaScript, Node.js, Express"
           />
@@ -133,7 +202,7 @@ function App() {
             images={[
               "https://via.placeholder.com/400x300",
               "https://via.placeholder.com/400x300",
-              "https://via.placeholder.com/400x300"
+              "https://via.placeholder.com/400x300",
             ]}
             technologies="Python, Django, SQLite"
           />
@@ -142,12 +211,21 @@ function App() {
       <section id="contact" className="full-screen">
         <h2>Contact</h2>
         <img src="https://via.placeholder.com/150" alt="Contact" />
-        <p>You can reach me at: <a href="mailto:your.email@example.com">email@example.com</a></p>
+        <p>
+          You can reach me at:{" "}
+          <a href="mailto:your.email@example.com">email@example.com</a>
+        </p>
         <p>Or follow me on social media:</p>
         <ul>
-          <li><a href="https://twitter.com/">Twitter</a></li>
-          <li><a href="https://linkedin.com/in/">LinkedIn</a></li>
-          <li><a href="https://github.com/">GitHub</a></li>
+          <li>
+            <a href="https://twitter.com/">Twitter</a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/">LinkedIn</a>
+          </li>
+          <li>
+            <a href="https://github.com/">GitHub</a>
+          </li>
         </ul>
       </section>
     </div>
