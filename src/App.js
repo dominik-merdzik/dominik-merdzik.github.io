@@ -2,7 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Components/Navbar';
 import './App.css';
-import githubLogo from './Images/github-mark.png';
+
+import githubLogo from './Images/github-mark.svg';
+import storyProject from './Images/see-n-play-project.png'
+import personalHProject from './Images/personal-hub-project.png'
+import bndProject from './Images/bnd-project.png'
+import bitHi from './Images/bitmoji/sticker.png';
+import grinSmile from './Images/bitmoji/grin-smile.png';
 
 const Project = ({ title, shortDescription, longDescription, imageSrc, githubLink, images, technologies }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -33,7 +39,7 @@ const Project = ({ title, shortDescription, longDescription, imageSrc, githubLin
       <img className="project-img" src={imageSrc} alt={title} onClick={toggleModal} />
       <p>{shortDescription}</p>
       <span className="read-more-toggle" onClick={toggleModal}>
-        Learn More
+        &#10230;
       </span>
 
       {isModalOpen && (
@@ -62,6 +68,19 @@ const Project = ({ title, shortDescription, longDescription, imageSrc, githubLin
 };
 
 function App() {
+  useEffect(() => {
+    const aboutSection = document.getElementById('about');
+    const handleScroll = () => {
+      const rect = aboutSection.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        aboutSection.classList.add('show');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="App">
       <Navbar />
@@ -71,17 +90,17 @@ function App() {
       </header>
       <section id="about" className="full-screen">
         <h2>About Me</h2>
-        <img src="https://via.placeholder.com/150" alt="About me" />
+        <div className="image-wrapper"></div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus turpis eu arcu dictum, nec volutpat libero fermentum. Aenean sit amet est auctor, congue nunc vitae, bibendum lacus.</p>
       </section>
       <section id="projects" className="full-screen">
         <h2>Projects</h2>
         <div className="projects-container">
           <Project
-            title="Project 1"
-            shortDescription="Bunny and Drago Objects"
+            title="Bunny & Dragon Objects"
+            shortDescription="Bunny & Dragon Objects"
             longDescription="Detailed description for Project 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus turpis eu arcu dictum, nec volutpat libero fermentum. Aenean sit amet est auctor, congue nunc vitae, bibendum lacus."
-            imageSrc="https://via.placeholder.com/150"
+            imageSrc={bndProject}
             githubLink="https://github.com/profile/project1"
             images={[
               "https://via.placeholder.com/400x300",
@@ -91,10 +110,10 @@ function App() {
             technologies="React, CSS, HTML"
           />
           <Project
-            title="Project 2"
-            shortDescription="Project 2: Fusce dapibus turpis eu arcu dictum, nec volutpat libero fermentum."
+            title="Personal Hub Life Organzier"
+            shortDescription="Personal Hub Life Organzier"
             longDescription="Detailed description for Project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus turpis eu arcu dictum, nec volutpat libero fermentum. Aenean sit amet est auctor, congue nunc vitae, bibendum lacus."
-            imageSrc="https://via.placeholder.com/150"
+            imageSrc={personalHProject}
             githubLink="https://github.com/profile/project2"
             images={[
               "https://via.placeholder.com/400x300",
@@ -104,11 +123,11 @@ function App() {
             technologies="JavaScript, Node.js, Express"
           />
           <Project
-            title="Project 3"
-            shortDescription="Project 3: Aenean sit amet est auctor, congue nunc vitae, bibendum lacus."
+            title="See-n-Say Storymaker Online"
+            shortDescription="See-n-Say Storymaker Online"
             longDescription="Detailed description for Project 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce dapibus turpis eu arcu dictum, nec volutpat libero fermentum. Aenean sit amet est auctor, congue nunc vitae, bibendum lacus."
-            imageSrc="https://via.placeholder.com/150"
-            githubLink="https://github.com/profile/project3"
+            imageSrc={storyProject}
+            githubLink="https://github.com/dominik-merdzik/See-n-Say-Storymaker-Online"
             images={[
               "https://via.placeholder.com/400x300",
               "https://via.placeholder.com/400x300",
