@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import "./App.css";
 
+// Image imports 
 import githubLogo from "./Images/github-mark.svg";
 import storyProject from "./Images/see-n-play-project.png";
 import personalHProject from "./Images/personal-hub-project.png";
@@ -132,11 +133,18 @@ function App() {
           <div className="column-two text-content">
             <h3>Technical Skills</h3>
             <div className="tech-stack">
-              <img src="path_to_js_logo" alt="JavaScript" />
-              <img src="path_to_react_logo" alt="React" />
-              <img src="path_to_node_logo" alt="Node.js" />
-              <img src="path_to_python_logo" alt="Python" />
-              <img src="path_to_docker_logo" alt="Docker" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg" alt="Nextjs" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" alt="Java" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MySql" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg" alt="Docker" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Github" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original-wordmark.svg" alt="CloudFlare" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/debian/debian-original-wordmark.svg" alt="Debain" />
             </div>
 
             <h3>Experience</h3>

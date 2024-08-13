@@ -296,7 +296,7 @@ nav a:hover {
 
 #about .image-wrapper:hover {
   background-image: url('./Images/bitmoji/grin-smile-fit.png');
-  background-size: 80%; /* Ensure hover image is also smaller */
+  background-size: 70%; /* Ensure hover image is also smaller */
 }
 
 #about .intro-text-wrapper {
@@ -320,6 +320,11 @@ nav a:hover {
   flex-wrap: wrap;
   gap: 15px;
   margin-top: 20px;
+  max-width: 408px;
+}
+
+#about .tech-stack img{
+  width: 45px;
 }
 
 #about .tech-stack img:hover {
