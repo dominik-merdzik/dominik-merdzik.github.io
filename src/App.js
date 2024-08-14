@@ -1,10 +1,10 @@
-// src/App.js
 import React, { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import ScrambledText from "./Components/ScrambledText";
 import "./App.css";
 
-// Image imports 
+// Image imports
 import githubLogo from "./Images/github-mark.svg";
 import storyProject from "./Images/see-n-play-project.png";
 import personalHProject from "./Images/personal-hub-project.png";
@@ -41,7 +41,6 @@ const Project = ({
       document.body.style.overflow = "auto";
     };
   }, [isModalOpen, currentImageIndex, images.length]);
-  
 
   return (
     <div className="project">
@@ -97,10 +96,17 @@ const Project = ({
 function App() {
   useEffect(() => {
     const aboutSection = document.getElementById("about");
+    const projectsSection = document.getElementById("projects");
+
     const handleScroll = () => {
-      const rect = aboutSection.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+      const aboutRect = aboutSection.getBoundingClientRect();
+      if (aboutRect.top < window.innerHeight && aboutRect.bottom >= 0) {
         aboutSection.classList.add("show");
+      }
+
+      const projectsRect = projectsSection.getBoundingClientRect();
+      if (projectsRect.top < window.innerHeight && projectsRect.bottom >= 0) {
+        projectsSection.classList.add("show");
       }
     };
 
@@ -111,8 +117,9 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <header className="App-header">
-        <h1>Welcome to My Portfolio</h1>
+
+      <header id="home" className="App-header">
+        <ScrambledText text="Dominik Merdzik" delayInterval={2000} hoverScramble={true} showCursor={true} />
         <p>This is a simple portfolio website built with React.</p>
       </header>
 
@@ -134,20 +141,62 @@ function App() {
           <div className="column-two text-content">
             <h3>Technical Skills</h3>
             <div className="tech-stack">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg" alt="Nextjs" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="c-sharp" />  
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" alt="Java" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MySql" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg" alt="Docker" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Github" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original-wordmark.svg" alt="CloudFlare" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original-wordmark.svg" alt="Azure"/>
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/debian/debian-original-wordmark.svg" alt="Debain" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-plain-wordmark.svg" alt="Unity" />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                alt="React"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg"
+                alt="Nextjs"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+                alt="c-sharp"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
+                alt="Java"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                alt="Python"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg"
+                alt="MongoDB"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+                alt="MySql"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg"
+                alt="Docker"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                alt="Github"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+                alt="AWS"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original-wordmark.svg"
+                alt="CloudFlare"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original-wordmark.svg"
+                alt="Azure"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/debian/debian-original-wordmark.svg"
+                alt="Debain"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-plain-wordmark.svg"
+                alt="Unity"
+              />
             </div>
 
             <h3>Experience</h3>
@@ -174,9 +223,8 @@ function App() {
           </div>
         </div>
       </section>
-
       <section id="projects" className="full-screen">
-      <h2>Personal Projects</h2>
+        <h2>Personal Projects</h2>
         <div className="projects-container">
           <Project
             title="Bunny & Dragon Objects"
@@ -221,31 +269,45 @@ function App() {
       </section>
       <section id="contact" className="full-screen">
         <div id="contact-container">
-        <h2>Contact</h2>
-        <p>
-          You can reach me at{" "} <br/>
-          <a href="mailto:business@dominikmerdzik.com">business@dominikmerdzik.com</a>
-        </p>
-        <p>Or through my socials</p>
-        <div className="socials-row">
-        <ul>
-          <li>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg" alt="X Logo"/>
-            {/* <a href="https://X.com/dominik-merdzik">X</a> */}
-          </li>
-          <li>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" alt="LinkedIn Logo"/>
-            {/* <a href="https://linkedin.com/in/">LinkedIn</a> */}
-          </li>
-          <li>
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Github" />
-            {/* <a href="https://github.com/">GitHub</a> */}
-          </li>
-        </ul>
-        </div>
+          <h2>Contact</h2>
+          <p>
+            You can reach me at <br />
+            <a href="mailto:business@dominikmerdzik.com">
+              business@dominikmerdzik.com
+            </a>
+          </p>
+          <p>Or through my socials</p>
+          <div className="socials-row">
+            <ul>
+              <li>
+                <a href="https://X.com/dominik-merdzik">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg"
+                    alt="X Logo"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg"
+                    alt="LinkedIn Logo"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/">
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                    alt="Github"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
-      <Footer /> {/* Add the Footer component here */}
+      <Footer />
     </div>
   );
 }

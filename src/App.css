@@ -1,8 +1,12 @@
 
 .App {
-  font-family: "Handlee", sans-serif;
+  font-family: 'Space Mono', monospace;
   font-weight: 500;
   font-style: normal;
+}
+
+body{
+  background-color: #282C34 !important;
 }
 
 .App-header {
@@ -34,6 +38,7 @@
   background-color: #fafafa;
 }
 
+/* Projects Section Layout */
 #projects {
   background-color: #f0f0f0;
   display: flex;
@@ -41,7 +46,15 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  height: 100vh; 
+  height: 100vh;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.7s ease-out, transform 0.3s ease-out;
+}
+
+#projects.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #projects h2 {
@@ -113,26 +126,6 @@
 .github-link img {
   width: 35px;
   height: 35px;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: space-around;
-}
-
-nav li {
-  margin: 0 15px;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-}
-
-nav a:hover {
-  text-decoration: underline;
 }
 
 .modal {
@@ -326,6 +319,8 @@ nav a:hover {
 
 #about .tech-stack img{
   width: 45px;
+  /* -webkit-filter: grayscale(100%);
+  filter: grayscale(100%); */ /** maybe? **/
 }
 
 #about .tech-stack img:hover {
@@ -442,4 +437,54 @@ nav a:hover {
 
 }
 
+.App-header {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #282c34;
+  color: white;
+}
 
+.scrambled-text-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.terminal-cursor {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(2rem, 6vw, 6rem);
+  color: white;
+  margin-right: 10px; /* Space between cursor and text */
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.scrambled-text {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(2rem, 6vw, 6rem);
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 2rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  opacity: 0;
+  transition: background-color 0.4s, color 0.4s, opacity 1s ease-in, box-shadow 0.4s, transform 0.4s;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Initial subtle shadow */
+}
+
+.scrambled-text.fade-in {
+  opacity: 1;
+}
+
+.scrambled-text:hover {
+  background-color: #24272E; /* Darker background to enhance 3D effect */
+  color: white;
+  transform: translateY(-2px); /* Slight lift to enhance popping effect */
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.5), /* Inset shadow to create depth */
+    0 4px 8px rgba(0, 0, 0, 0.4); /* Outer shadow for 3D effect */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger shadow to enhance text depth */
+}
