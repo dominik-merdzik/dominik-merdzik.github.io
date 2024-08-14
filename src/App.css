@@ -276,6 +276,7 @@ nav a:hover {
   justify-content: space-between;
   max-width: 1200px;
   width: 100%;
+
 }
 
 #about .column-one {
@@ -344,6 +345,100 @@ nav a:hover {
 #about .experience p {
   margin: 5px 0;
   font-size: 1.1rem;
+}
+
+#contact-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#contact-container p{
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.socials-row ul{
+  display:flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 0%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.socials-row li{
+  display: flex;
+  padding: 20px;
+  list-style: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socials-row img{
+  width: 40px;
+  padding: 2px;
+}
+
+.socials-row a{
+  text-decoration: none;
+}
+
+/* Default styles for all devices */
+
+/* Small devices (phones, 576px and down) */
+@media screen and (max-width: 575.98px) {
+  .full-screen {
+    height: fit-content !important;
+  }
+  #about .about-content{
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #about .column-one, #about .column-two {
+    width: 100%; /* Return to 50% width for each column on larger screens */
+    padding-left:0px;
+  }
+  #about .image-wrapper {
+    width: 100%;
+    height: 360px;
+    background-image: url('./Images/bitmoji/sticker-fit.png');
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat; 
+  }
+  #about .intro-text-wrapper {
+    width: 90%;
+    text-align: center;
+  }
+  #projects .projects-container h2{
+    padding-top:50px;
+  }
+  #about .experience h4{
+    font-size: 1.2rem;
+  }
+  #about .experience p{
+    font-size: 1rem;
+  }
+  #contact-container{
+    padding-bottom: 100px;
+  }
+  
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+
 }
 
 

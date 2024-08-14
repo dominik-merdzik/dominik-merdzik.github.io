@@ -1,6 +1,7 @@
 // src/App.js
 import React, { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 import "./App.css";
 
 // Image imports 
@@ -40,6 +41,7 @@ const Project = ({
       document.body.style.overflow = "auto";
     };
   }, [isModalOpen, currentImageIndex, images.length]);
+  
 
   return (
     <div className="project">
@@ -109,7 +111,6 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-
       <header className="App-header">
         <h1>Welcome to My Portfolio</h1>
         <p>This is a simple portfolio website built with React.</p>
@@ -135,7 +136,7 @@ function App() {
             <div className="tech-stack">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg" alt="Nextjs" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg" alt="Node.js" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="c-sharp" />  
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" alt="Java" />
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" />
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB" />
@@ -144,7 +145,9 @@ function App() {
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Github" />
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" />
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cloudflare/cloudflare-original-wordmark.svg" alt="CloudFlare" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original-wordmark.svg" alt="Azure"/>
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/debian/debian-original-wordmark.svg" alt="Debain" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-plain-wordmark.svg" alt="Unity" />
             </div>
 
             <h3>Experience</h3>
@@ -173,7 +176,7 @@ function App() {
       </section>
 
       <section id="projects" className="full-screen">
-        <h2>Personal Projects</h2>
+      <h2>Personal Projects</h2>
         <div className="projects-container">
           <Project
             title="Bunny & Dragon Objects"
@@ -217,25 +220,32 @@ function App() {
         </div>
       </section>
       <section id="contact" className="full-screen">
+        <div id="contact-container">
         <h2>Contact</h2>
-        <img src="https://via.placeholder.com/150" alt="Contact" />
         <p>
-          You can reach me at:{" "}
-          <a href="mailto:your.email@example.com">email@example.com</a>
+          You can reach me at{" "} <br/>
+          <a href="mailto:business@dominikmerdzik.com">business@dominikmerdzik.com</a>
         </p>
-        <p>Or follow me on social media:</p>
+        <p>Or through my socials</p>
+        <div className="socials-row">
         <ul>
           <li>
-            <a href="https://twitter.com/">Twitter</a>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg" alt="X Logo"/>
+            {/* <a href="https://X.com/dominik-merdzik">X</a> */}
           </li>
           <li>
-            <a href="https://linkedin.com/in/">LinkedIn</a>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg" alt="LinkedIn Logo"/>
+            {/* <a href="https://linkedin.com/in/">LinkedIn</a> */}
           </li>
           <li>
-            <a href="https://github.com/">GitHub</a>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="Github" />
+            {/* <a href="https://github.com/">GitHub</a> */}
           </li>
         </ul>
+        </div>
+        </div>
       </section>
+      <Footer /> {/* Add the Footer component here */}
     </div>
   );
 }
