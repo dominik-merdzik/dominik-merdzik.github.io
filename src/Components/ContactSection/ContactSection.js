@@ -12,6 +12,13 @@ const ContactSection = () => (
       <p>Or through my socials</p>
       <SocialLinks />
     </div>
+    <div className="back-to-top-container">
+        <a href="#top" className="back-to-top-link">
+          <span className="line"></span>
+          Back to the top
+          <span className="line"></span>
+        </a>
+      </div>
   </section>
 );
 

@@ -47,7 +47,7 @@ body{
   align-items: center;
   justify-content: center;
   padding: 20px;
-  height: fit-content;
+  height: 100vh;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1.7s ease-out, transform 0.3s ease-out;
@@ -68,6 +68,7 @@ body{
   justify-content: center;
   flex-wrap: wrap;
   width: 80%; 
+  height:auto;
   max-width: 1200px;
 }
 .project {
@@ -115,6 +116,7 @@ body{
   color: black;
   transform: translateX(6px);
 }
+
 
 
 .github-link {
@@ -375,6 +377,39 @@ body{
   align-items: center;
 }
 
+.back-to-top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.back-to-top-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.back-to-top-link .line {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 1px;
+  background-color: black;
+}
+
+.back-to-top-link:hover {
+  color: grey;
+}
+
+.back-to-top-link:hover .line {
+  background-color: grey; 
+}
+
+
 .socials-row img{
   width: 40px;
   padding: 2px;
@@ -546,9 +581,9 @@ body{
     width: 95%;
   }
 
-  #contact-container{
+  /* #contact-container{
     padding-bottom: 100px;
-  }
+  } */
   .scrambled-text{
     padding: 0px;
   }
