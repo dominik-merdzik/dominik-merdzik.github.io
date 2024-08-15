@@ -5,6 +5,7 @@ import ScrambledText from "./Components/ScrambledText";
 import AboutSection from "./Components/AboutSection/AboutSection";
 import Project from "./Components/ProjectSection/Project";
 import ContactSection from "./Components/ContactSection/ContactSection";
+import DecodedText from "./Components/DecodedText"
 import "./App.css";
 
 // Project Data
@@ -74,13 +75,22 @@ function App() {
     <div className="App">
       <Navbar />
       <header id="home" className="App-header">
+        <div className="Scramble-container">
         <ScrambledText
           text="Dominik Merdzik"
-          delayInterval={2000}
+          delayInterval={1500}
           hoverScramble={true}
           showCursor={true}
         />
-        <p>This is a simple portfolio website built with React.</p>
+        <ScrambledText
+          id="scramble-line-2"
+          text=" Backend Developer"
+          delayInterval={3000}
+          hoverScramble={false}
+          showCursor={false}
+        />
+        </div>
+        <DecodedText text="00110010-00110000-00110010-00110100"/>
       </header>
 
       <AboutSection />

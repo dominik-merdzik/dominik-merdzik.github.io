@@ -2,7 +2,7 @@ import React from "react";
 import SocialLinks from "./SocialLink";
 
 const ContactSection = () => (
-  <section id="contact" className="full-screen">
+  <section id="contact" className="full-screen contact-section">
     <div id="contact-container">
       <h2>Contact</h2>
       <p>

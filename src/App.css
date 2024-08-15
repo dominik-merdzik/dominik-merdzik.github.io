@@ -21,13 +21,13 @@ body{
 }
 
 .full-screen {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
   background-color: #f0f0f0;
+  height: fit-content;
 }
 
 #about {
@@ -36,6 +36,7 @@ body{
 
 #contact {
   background-color: #fafafa;
+  height: 100vh !important;
 }
 
 /* Projects Section Layout */
@@ -46,7 +47,7 @@ body{
   align-items: center;
   justify-content: center;
   padding: 20px;
-  height: 100vh;
+  height: fit-content;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1.7s ease-out, transform 0.3s ease-out;
@@ -114,7 +115,6 @@ body{
   color: black;
   transform: translateX(6px);
 }
-
 
 
 .github-link {
@@ -384,6 +384,111 @@ body{
   text-decoration: none;
 }
 
+.App-header {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: #282c34;
+  color: white;
+}
+
+.Scramble-container{
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.scrambled-text-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+#scramble-line-2 h1{
+  font-size: 2rem;
+}
+
+#scramble-line-2{
+  padding: 0rem clamp(1rem, 2vw, 2rem);
+}
+
+
+.terminal-cursor {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(2rem, 6vw, 6rem);
+  color: white;
+  margin-right: 10px; /* Space between cursor and text */
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.scrambled-text {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(2rem, 6vw, 6rem);
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 2rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.scrambled-text.fade-in {
+  opacity: 1;
+}
+
+.hover-enabled:hover {
+  background-color: #24272E;
+  transform: translateY(-2px);
+  box-shadow: 
+    inset 0 0 10px rgba(0, 0, 0, 0.5), 
+    0 4px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+
+.decoded-text {
+  font-family: 'Space Mono', monospace;
+  /* font-size: clamp(2rem, 6vw, 6rem); */
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.decoded-text:hover {
+  color: #00ff00; 
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.decoded-text {
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+
 /* Default styles for all devices */
 
 /* Small devices (phones, 576px and down) */
@@ -403,9 +508,13 @@ body{
     width: 100%;
     height: 360px;
     background-image: url('./Images/bitmoji/sticker-fit.png');
-    background-size: 80%;
+    background-size: 55%;
     background-position: center;
     background-repeat: no-repeat; 
+  }
+  #about .image-wrapper:hover {
+    background-image: url('./Images/bitmoji/grin-smile-fit.png');
+    background-size: 55%; /* Ensure hover image is also smaller */
   }
   #about .intro-text-wrapper {
     width: 90%;
@@ -440,12 +549,22 @@ body{
   #contact-container{
     padding-bottom: 100px;
   }
+  .scrambled-text{
+    padding: 0px;
+  }
+  #scramble-line-2{
+    padding:0px;
+  }
+  #scramble-line-2 h1{
+    font-size: 1.5rem;
+  }
   
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
-
+ 
+  
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -456,56 +575,4 @@ body{
 /* Extra large devices (large desktops, 1200px and up) */
 @media screen and (min-width: 1200px) {
 
-}
-
-.App-header {
-  display: grid;
-  place-items: center;
-  height: 100vh;
-  background-color: #282c34;
-  color: white;
-}
-
-.scrambled-text-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.terminal-cursor {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(2rem, 6vw, 6rem);
-  color: white;
-  margin-right: 10px; /* Space between cursor and text */
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
-}
-
-.scrambled-text {
-  font-family: 'Space Mono', monospace;
-  font-size: clamp(2rem, 6vw, 6rem);
-  color: white;
-  padding: 0rem clamp(1rem, 2vw, 2rem);
-  border-radius: clamp(0.4rem, 0.75vw, 1rem);
-  opacity: 0;
-  transition: background-color 0.4s, color 0.4s, opacity 1s ease-in, box-shadow 0.4s, transform 0.4s;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Initial subtle shadow */
-}
-
-.scrambled-text.fade-in {
-  opacity: 1;
-}
-
-.scrambled-text:hover {
-  background-color: #24272E; /* Darker background to enhance 3D effect */
-  color: white;
-  transform: translateY(-2px); /* Slight lift to enhance popping effect */
-  box-shadow: 
-    inset 0 0 10px rgba(0, 0, 0, 0.5), /* Inset shadow to create depth */
-    0 4px 8px rgba(0, 0, 0, 0.4); /* Outer shadow for 3D effect */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Stronger shadow to enhance text depth */
 }
