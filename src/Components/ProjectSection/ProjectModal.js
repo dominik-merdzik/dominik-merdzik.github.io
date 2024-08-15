@@ -5,24 +5,21 @@ const ProjectModal = ({ title, longDescription, images, technologies, githubLink
 
   useEffect(() => {
     if (isOpen) {
-      // Move user to the #projects section
+      
       window.location.hash = "#projects";
 
-      document.body.style.overflow = "hidden";
       const interval = setInterval(() => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       }, 4000);
 
       return () => {
         clearInterval(interval);
-        document.body.style.overflow = "auto";
       };
-    } else {
-      document.body.style.overflow = "auto";
     }
   }, [isOpen, images.length]);
 
   if (!isOpen) return null;
+
 
   return (
     <>

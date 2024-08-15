@@ -4,7 +4,7 @@ const ScrambledText = ({ text, delayInterval = 1000, hoverScramble = true, showC
   const [displayedText, setDisplayedText] = useState('');
   const [fadeIn, setFadeIn] = useState(false);
   const [hasScrambled, setHasScrambled] = useState(false);
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456790_";
 
   const generateRandomText = (length) => {
     return Array.from({ length }, () => letters[Math.floor(Math.random() * 26)]).join('');

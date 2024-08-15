@@ -12,11 +12,15 @@ const projects = [
   {
     title: "Bunny & Dragon Objects",
     shortDescription: "Bunny & Dragon Objects",
-    longDescription: "Detailed description for Project 1...",
+    longDescription:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     imageSrc: "/Images/bnd-project.png",
     githubLink: "https://github.com/profile/project1",
-    images: ["https://via.placeholder.com/400x300", "https://via.placeholder.com/400x300"],
-    technologies: "React, CSS, HTML"
+    images: [
+      "https://via.placeholder.com/400x300",
+      "https://via.placeholder.com/400x300",
+    ],
+    technologies: "React, CSS, HTML",
   },
   {
     title: "Personal Hub Life Organzier",
@@ -24,18 +28,25 @@ const projects = [
     longDescription: "Detailed description for Project 2...",
     imageSrc: "/Images/personal-hub-project.png",
     githubLink: "https://github.com/profile/project2",
-    images: ["https://via.placeholder.com/400x300", "https://via.placeholder.com/400x300"],
-    technologies: "JavaScript, Node.js, Express"
+    images: [
+      "https://via.placeholder.com/400x300",
+      "https://via.placeholder.com/400x300",
+    ],
+    technologies: "JavaScript, Node.js, Express",
   },
   {
     title: "See-n-Say Storymaker Online",
     shortDescription: "See-n-Say Storymaker Online",
     longDescription: "Detailed description for Project 3...",
     imageSrc: "/Images/see-n-play-project.png",
-    githubLink: "https://github.com/dominik-merdzik/See-n-Say-Storymaker-Online",
-    images: ["https://via.placeholder.com/400x300", "https://via.placeholder.com/400x300"],
-    technologies: "Python, Django, SQLite"
-  }
+    githubLink:
+      "https://github.com/dominik-merdzik/See-n-Say-Storymaker-Online",
+    images: [
+      "https://via.placeholder.com/400x300",
+      "https://via.placeholder.com/400x300",
+    ],
+    technologies: "Python, Django, SQLite",
+  },
 ];
 
 function App() {
@@ -63,7 +74,12 @@ function App() {
     <div className="App">
       <Navbar />
       <header id="home" className="App-header">
-        <ScrambledText text="Dominik Merdzik" delayInterval={2000} hoverScramble={true} showCursor={true} />
+        <ScrambledText
+          text="Dominik Merdzik"
+          delayInterval={2000}
+          hoverScramble={true}
+          showCursor={true}
+        />
         <p>This is a simple portfolio website built with React.</p>
       </header>
 
