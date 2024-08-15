@@ -128,20 +128,25 @@ body{
   height: 35px;
 }
 
+/* TODO: Responsive modal */
+
 .modal {
   display: none;
-  position: fixed;
+  position: fixed; /* Change to fixed to position relative to the viewport */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
+  transform: translate(-50%, -50%) scale(0.8); /* Center the modal */
   background-color: #fff;
   padding: 20px;
   border: 2px solid #000;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  width: 1200px;
-  height: 700px;
+  width: 80vw; /* Set width relative to viewport width */
+  max-width: 1200px;
+  height: auto; /* Allow height to adjust based on content */
+  max-height: 80vh; /* Limit the modal height to viewport height */
+  overflow-y: auto; /* Add scroll for overflow content */
   opacity: 0;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -151,6 +156,25 @@ body{
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
 }
+
+.modal-overlay {
+  display: none;
+  position: fixed; /* Change to fixed to cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.show {
+  display: block;
+  opacity: 1;
+}
+
 
 .modal-close {
   position: absolute;
@@ -191,31 +215,14 @@ body{
 }
 
 
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.modal-overlay.show {
-  display: block;
-  opacity: 1;
-}
-
 .modal-content {
   display: flex;
-  height: 100%;
+  flex-direction: column; /* Adjust to column for better responsiveness */
+  height: auto; /* Allow height to adjust based on content */
 }
 
 .carousel {
-  flex: 1.5;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -236,10 +243,8 @@ body{
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
+  margin-top: 20px;
 }
-
-
 
 /* About Section Layout */
 #about {

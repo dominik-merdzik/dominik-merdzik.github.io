@@ -43,6 +43,7 @@ const ScrambledText = ({ text, delayInterval = 1000, hoverScramble = true, showC
     }, delayInterval);
 
     return () => clearTimeout(timeout);
+    // eslint-disable-next-line
   }, [text, delayInterval]);
 
   const handleMouseOver = () => {
