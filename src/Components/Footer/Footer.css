@@ -8,14 +8,19 @@
   }
 
 .footer p {
+  font-size: 0.9rem;
   letter-spacing: .1rem;
 }
   
 .footer-links {
     margin-top: 8px;
 }
+.made-by{
+  font-size: 0.8rem !important;
+}
   
 .footer-links a {
+    font-size: 0.8rem;
     color: #61dafb;
     text-decoration: none;
     margin: 0 10px;

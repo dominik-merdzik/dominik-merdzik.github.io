@@ -5,30 +5,47 @@ const ProjectModal = ({ title, longDescription, images, technologies, githubLink
 
   useEffect(() => {
     if (isOpen) {
-      
-      window.location.hash = "#projects";
+      document.body.classList.add("modal-open");
+
+      const projectsSection = document.getElementById("projects");
+      if (projectsSection) {
+        projectsSection.scrollIntoView({ behavior: "smooth" });
+      }
 
       const interval = setInterval(() => {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
       }, 4000);
 
+      const handleScroll = () => {
+        const modalElement = document.querySelector('.modal.show');
+        if (modalElement) {
+          const rect = modalElement.getBoundingClientRect();
+          if (rect.top >= window.innerHeight || rect.bottom <= 0) {
+            onClose();
+          }
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
       return () => {
         clearInterval(interval);
+        window.removeEventListener('scroll', handleScroll);
+        document.body.classList.remove("modal-open");
       };
     }
-  }, [isOpen, images.length]);
+  }, [isOpen, images.length, onClose]);
 
   if (!isOpen) return null;
-
 
   return (
     <>
       <div className="modal-overlay show" onClick={onClose}></div>
       <div className="modal show">
         <div className="modal-content">
-          <div className="carousel">
+          {/* <div className="carousel">
             <img src={images[currentImageIndex]} alt={`${title} screenshot ${currentImageIndex + 1}`} />
-          </div>
+          </div> */}
           <div className="text-area">
             <h2>{title}</h2>
             <p><strong>Technologies Used:</strong> {technologies}</p>

@@ -25,7 +25,7 @@ const AboutSection = () => (
         <h3>Experience</h3>
         <div className="experience">
           <ExperienceItem 
-            title="Creative One, Huntsville — Web Specialist"
+            title="Web Specialist Co-op - Creative One"
             date="July 2022 - September 2022"
             description="Worked with a team to meet deadlines and accomplish goals with
             clear communication. Held meetings with clients to coordinate
@@ -33,7 +33,7 @@ const AboutSection = () => (
             technologies while managing client expectations."
           />
           <ExperienceItem 
-            title="Harveys & Swiss Chalet, Innisfil — Server and Store Opener"
+            title="Part-time Employee - Harveys & Swiss Chalet"
             date="October 2018 - Present"
             description="Sharpened teamwork and interpersonal skills. Learned to resolve
             complaints and conflicts independently, adhering to company
