@@ -77,6 +77,7 @@ function App() {
         projectsSection.classList.add("show");
       }
     };
+    
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

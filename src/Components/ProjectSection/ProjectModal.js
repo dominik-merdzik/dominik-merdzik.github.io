@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const ProjectModal = ({ title, longDescription, images, technologies, githubLink, isOpen, onClose }) => {
+  // eslint-disable-next-line
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {

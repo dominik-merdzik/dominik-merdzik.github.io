@@ -1,9 +1,9 @@
 import React from "react";
 
 const socialLinks = [
-  { href: "https://X.com/dominik-merdzik", icon: "twitter", alt: "X Logo" },
-  { href: "https://linkedin.com/in/", icon: "linkedin", alt: "LinkedIn Logo" },
-  { href: "https://github.com/", icon: "github", alt: "Github" }
+  { href: "https://x.com/dominkk_merdzik", icon: "twitter", alt: "X Logo" },
+  { href: "https://www.linkedin.com/in/dominik-merdzik/", icon: "linkedin", alt: "LinkedIn Logo" },
+  { href: "https://github.com/dominik-merdzik", icon: "github", alt: "Github" }
 ];
 
 const SocialLinks = () => (

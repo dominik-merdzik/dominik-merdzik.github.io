@@ -565,6 +565,7 @@ body{
     background-size: 55%;
     background-position: center;
     background-repeat: no-repeat; 
+    user-select:none;
   }
   #about .image-wrapper:hover {
     background-image: url('./Images/bitmoji/grin-smile-fit.png');
@@ -580,6 +581,10 @@ body{
   }
   #about .experience p{
     font-size: 1rem;
+  }
+
+  #about .tech-stack img{
+    user-select:none;
   }
 
   #projects .projects-container h2{
@@ -600,19 +605,14 @@ body{
     width: 95%;
   }
 
-  /* #contact-container{
-    padding-bottom: 100px;
-  } */
 
-  .scrambled-text{
-    padding: 0px;
-  }
   #scramble-line-2{
     padding:0px;
   }
   #scramble-line-2 h1{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
+  
   
 }
 
