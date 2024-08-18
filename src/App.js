@@ -11,7 +11,7 @@ import "./App.css";
 // Project Data
 const projects = [
   {
-    title: "RaspberryPi Statistics Webapp",
+    title: "RaspberryPi Statistics Web App",
     shortDescription: "Raspberry-Pi Statistics Web App",
     longDescription:
       "A web application I designed to monitor and display system statistics of my Raspberry Pi, hosted in my basement 😅. " +
@@ -77,7 +77,6 @@ function App() {
         projectsSection.classList.add("show");
       }
     };
-    
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

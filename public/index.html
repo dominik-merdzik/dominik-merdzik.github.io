@@ -9,6 +9,13 @@
     <meta name="keywords" content="Dominik Merdzik, portfolio, 2024, webdev">
     <meta name="author" content="Dominik Merdzik">
 
+    <!-- Open Graph Protocol -->
+
+    <meta property="og:title" content="Dominik Merdzik Portfolio" />
+    <meta property="og:type" content="Personal Website" />
+    <meta property="og:url" content="https://www.dominiktm.com" />
+    <meta property="og:image" content="https://dominiktm.com/Images/bitmoji/grin-smile.png" />
+
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -16,6 +23,85 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
     <title>Dominik Merdzik</title>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dominik Merdzik",
+      "email": "business@dominikmerdzik.com",
+      "jobTitle": "Full-Stack Developer",
+      "url": "https://dominiktm.com",
+      "sameAs": [
+        "https://github.com/dominik-merdzik",
+        "https://www.linkedin.com/in/dominik-merdzik",
+        "https://www.instagram.com/dominikmerdzik/"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "themSelf"
+      },
+      "knowsAbout": [
+        "React", "Next.js", "Tailwind CSS", "TypeScript", "Cloudflare", "Raspberry Pi"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Lakehead University"
+      },
+      "affiliation": {
+        "@type": "CollegeOrUniversity",
+        "name": "Lakehead University"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://dominiktm.com"
+      },
+      "hasPart": [
+        {
+          "@type": "CreativeWork",
+          "name": "RaspberryPi Statistics Web App",
+          "description": "A web application I designed to monitor and display system statistics of my Raspberry Pi, hosted in my basement 😅. It's built with Next.js and TypeScript, styled using Tailwind CSS, and hosted on a Raspberry Pi 3 with 1GB of memory.",
+          "image": "https://dominiktm.com/Images/raspberry-pi-project.png",
+          "url": "https://github.com/dominik-merdzik/Raspberrypi-Status-App.git",
+          "creator": {
+            "@type": "Person",
+            "name": "Dominik Merdzik"
+          },
+          "keywords": "NextJS, TypeScript, Tailwind, RaspberryPi, Cloudflare"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Personal Hub - Schedule Organizer",
+          "description": "The Personal Hub Project is a personal organization web app designed to centralize schedules, events, meetings, and more. Built with ASP.NET and C#, it features tools like a calendar and Google Maps integration.",
+          "image": "https://dominiktm.com/Images/personal-hub-project.png",
+          "url": "https://github.com/dominik-merdzik/Personal-Hub-Project.git",
+          "creator": {
+            "@type": "Person",
+            "name": "Dominik Merdzik"
+          },
+          "keywords": ".NET, C#, SQL, Azure, Bootstrap"
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "OpenGL Bunny & Dragon Objects",
+          "description": "Assignment for 3rd year Computer Graphics course. Read a number of 3D point positions from an OBJ file and render them onto the screen using OpenGL.",
+          "image": "https://dominiktm.com/Images/bnd-project.png",
+          "url": "https://github.com/dominik-merdzik/OpenGL-bunny_and_dragon.git",
+          "creator": {
+            "@type": "Person",
+            "name": "Dominik Merdzik"
+          },
+          "keywords": "C++, OpenGL, Linear Algebra, GLFW, GLEW, GLM, Blender"
+        }
+      ]
+    }
+    </script>
+
+    <script>
+      /*to prevent Firefox FOUC, this must be here*/
+      let FF_FOUC_FIX;
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
