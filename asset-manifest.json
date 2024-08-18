@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.5be7e0ae.css",
-    "main.js": "/static/js/main.32d57fef.js",
+    "main.css": "/static/css/main.28ecd49b.css",
+    "main.js": "/static/js/main.0eb03bf7.js",
     "static/js/453.227c8183.chunk.js": "/static/js/453.227c8183.chunk.js",
-    "static/media/grin-smile-fit.png": "/static/media/grin-smile-fit.77a2974f4698523709e4.png",
     "static/media/sticker-fit.png": "/static/media/sticker-fit.0d5a794b62847576a882.png",
     "index.html": "/index.html",
-    "main.5be7e0ae.css.map": "/static/css/main.5be7e0ae.css.map",
-    "main.32d57fef.js.map": "/static/js/main.32d57fef.js.map",
+    "main.28ecd49b.css.map": "/static/css/main.28ecd49b.css.map",
+    "main.0eb03bf7.js.map": "/static/js/main.0eb03bf7.js.map",
     "453.227c8183.chunk.js.map": "/static/js/453.227c8183.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5be7e0ae.css",
-    "static/js/main.32d57fef.js"
+    "static/css/main.28ecd49b.css",
+    "static/js/main.0eb03bf7.js"
   ]
 }
