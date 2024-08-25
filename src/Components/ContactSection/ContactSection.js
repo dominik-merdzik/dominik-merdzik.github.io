@@ -19,7 +19,7 @@ const ContactSection = () => {
         <div className="back-to-top-container">
           <button onClick={scrollToTop} className="back-to-top-link">
             <span className="line"></span>
-            Back to the top
+            Back to the top ☝️
             <span className="line"></span>
           </button>
         </div>

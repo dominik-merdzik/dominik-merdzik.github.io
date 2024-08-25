@@ -176,7 +176,7 @@ body{
 
 
 .modal-close {
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 15px;
   width: 30px;
@@ -187,6 +187,7 @@ body{
   outline: none;
   transition: transform 0.3s ease-in-out;
 }
+
 
 .modal-close:before,
 .modal-close:after {
@@ -218,6 +219,7 @@ body{
   flex-direction: column; 
   height: auto;
 }
+
 
 .github-link {
   margin-top: 20px;
@@ -298,15 +300,6 @@ body{
   height: 440px;
   background-image: url('../public/Images/bitmoji/sticker-fit.png');
   background-size: 70%;
-  background-position: center;
-  background-repeat: no-repeat; 
-}
-
-#about .image-wrapper:hover {
-  width: 75%;
-  height: 440px;
-  background-image: url('../public/Images/bitmoji/grin-smile-fit.png');
-  background-size: 70%; /* Ensure hover image is also smaller */
   background-position: center;
   background-repeat: no-repeat; 
 }
@@ -558,22 +551,21 @@ body{
     flex-wrap: wrap;
   }
   #about .column-one, #about .column-two {
-    width: 100%; /* Return to 50% width for each column on larger screens */
+    width: 100%; 
     padding-left:0px;
   }
   #about .image-wrapper {
     width: 100%;
-    height: 360px;
+    height: 275px;
     background-image: url('./Images/bitmoji/sticker-fit.png');
     background-size: 55%;
-    background-position: center;
-    background-repeat: no-repeat; 
     user-select:none;
   }
-  #about .image-wrapper:hover {
+  /* #about .image-wrapper:hover {
     background-image: url('./Images/bitmoji/grin-smile-fit.png');
-    background-size: 55%; /* Ensure hover image is also smaller */
-  }
+    background-size: 55%; 
+    user-select:none;
+  } */
   #about .intro-text-wrapper {
     width: 90%;
     text-align: center;
@@ -611,6 +603,9 @@ body{
   #scramble-line-2 h1{
     font-size: 1.3rem;
   }
+  /* #scrambled-text{
+    padding: 0px;
+  } */
   
   
 }
