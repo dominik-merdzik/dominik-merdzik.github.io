@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const DecodedText = ({ text }) => {
   const [displayedText, setDisplayedText] = useState(text);
   const [isDecoding, setIsDecoding] = useState(false);
   const [hasDecoded, setHasDecoded] = useState(false);
+  const [bounceEnabled, setBounceEnabled] = useState(false);
+
   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890_";
+
+  useEffect(() => {
+    // Delay the bounce by 7 seconds after component mounts
+    const timer = setTimeout(() => {
+      setBounceEnabled(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const decodeBinary = (binaryString) => {
     return binaryString
@@ -16,7 +27,7 @@ const DecodedText = ({ text }) => {
   const scrambleText = (decodedText) => {
     let iteration = 0;
     const interval = setInterval(() => {
-      setDisplayedText((prev) =>
+      setDisplayedText(() =>
         decodedText
           .split("")
           .map((letter, index) => {
@@ -47,7 +58,7 @@ const DecodedText = ({ text }) => {
 
   return (
     <div
-      className={`decoded-text ${!hasDecoded ? "bounce" : ""}`}
+      className={`decoded-text ${!hasDecoded && bounceEnabled ? "bounce" : ""}`}
       onClick={handleDecode}
     >
       {displayedText}

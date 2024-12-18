@@ -10,11 +10,12 @@ const ContactSection = () => {
     <section id="contact" className="full-screen contact-section">
       <div id="contact-container">
         <h2>Contact</h2>
-        <p>
+        {/* <p>
           You can reach me at <br />
           <a href="mailto:business@dominikmerdzik.com">business@dominikmerdzik.com</a>
         </p>
-        <p>Or through my socials</p>
+        <p>Or through my socials</p> */}
+        <p>You can reach me through my socials</p>
         <SocialLinks />
         <div className="back-to-top-container">
           <button onClick={scrollToTop} className="back-to-top-link">

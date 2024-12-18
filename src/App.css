@@ -298,10 +298,13 @@ body{
 #about .image-wrapper {
   width: 75%;
   height: 440px;
-  background-image: url('../public/Images/bitmoji/sticker-fit.png');
-  background-size: 70%;
-  background-position: center;
-  background-repeat: no-repeat; 
+  /* background-image: url('../public/Images/bitmoji/sticker-fit.png'); */
+  background-image: url('../public/Images/headshot.JPEG');
+  background-size: 100%;
+  border-radius: 50%;
+  background-position: 0% 25%;
+  background-repeat: no-repeat;
+  user-select:none;
 }
 
 #about .intro-text-wrapper {
@@ -310,6 +313,7 @@ body{
 }
 
 #about .intro-text {
+  color: #353935 !important;
   font-size: 1.2rem;
   line-height: 1.5;
   margin-top: 20px;
