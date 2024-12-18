@@ -101,7 +101,7 @@ function App() {
             showCursor={false}
           />
         </div>
-        <DecodedText text="" />
+        <DecodedText text="" id="DecodedText"/>
         {/* 00110010-00110000-00110010-00110100 */}
       </header>
 
